@@ -1,5 +1,7 @@
 # Practice with DIAL Core, Chat, Themes and Adapters setup
 
+![dial](https://dialx.ai/platform-rev9.svg)
+
 ## Configuration Files
 - **[core/config.json](core/config.json)** - Main DIAL configuration with applications, models, and API keys
 - **[settings/settings.json](settings/settings.json)** - Core server settings and security configuration
