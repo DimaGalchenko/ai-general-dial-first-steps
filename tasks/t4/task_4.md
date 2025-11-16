@@ -11,7 +11,7 @@
               "type": "chat",
               "upstreams": [
                 {
-                  "endpoint": "https://api.openai.com/",
+                  "endpoint": "https://api.openai.com/v1/chat/completions",
                   "key": "${OPENAI_API_KEY}"
                 }
               ]
