@@ -1,145 +1,10 @@
 {
   "routes": {},
   "applications": {
-    "echo": {
-      "displayName": "My Echo App",
-      "description": "Simple application that repeats user's message",
-      "endpoint": "http://host.docker.internal:5022/openai/deployments/echo/chat/completions"
-    },
-    "essay-assistant": {
-      "displayName": "Essay Assistant",
-      "description": "Essay Assistant. Always answers with essay.",
-      "endpoint": "http://host.docker.internal:5025/openai/deployments/essay-assistant/chat/completions"
-    }
+
   },
   "models": {
-    "gpt-4o": {
-      "displayName": "GPT 4o",
-      "overrideName": "gpt-4o",
-      "endpoint": "http://adapter-dial-openai:5000/openai/deployments/gpt-4o/chat/completions",
-      "iconUrl": "http://localhost:3001/gpt4.svg",
-      "type": "chat",
-      "upstreams": [
-        {
-          "endpoint": "https://api.openai.com/v1/chat/completions",
-          "key": "${OPENAI_API_KEY}"
-        }
-      ]
-    },
-    "claude-sonnet-4": {
-      "displayName": "Sonnet 4",
-      "endpoint": "http://adapter-dial-bedrock:5000/openai/deployments/claude-sonnet-4-20250514/chat/completions",
-      "type": "chat",
-      "upstreams": [
-        {
-          "key": "${ANTHROPIC_API_KEY}"
-        }
-      ]
-    },
-    "gemini-2.5-flash": {
-      "displayName": "Gemini 2.5 Flash",
-      "type": "chat",
-      "endpoint": "http://adapter-dial-vertexai:5000/openai/deployments/gemini-2.5-flash/chat/completions",
-      "iconUrl": "http://localhost:3001/Gemini-Pro-Vision.svg",
-      "upstreams": [
-        {
-          "key": "${GEMINI_API_KEY}"
-        }
-      ]
-    },
-    "gpt-5-nano": {
-      "type": "chat",
-      "overrideName": "gpt-5-nano",
-      "endpoint": "http://adapter-dial-openai:5000/openai/deployments/gpt-5-nano/chat/completions",
-      "upstreams": [
-        {
-          "endpoint": "https://${AZURE_OPENAI_SERVICE_NAME}.azure.com/openai/v1/responses",
-          "key": "${API_KEY}"
-        }
-      ]
-    },
-    "dall-e-3": {
-      "type": "chat",
-      "endpoint": "http://adapter-dial-openai:5000/openai/deployments/dall-e-3/chat/completions",
-      "upstreams": [
-        {
-          "endpoint": "https://${AZURE_OPENAI_SERVICE_NAME}.azure.com/openai/deployments/dall-e-3/images/generations",
-          "key": "${API_KEY}"
-        }
-      ]
-    },
-    "text-embedding-3-small": {
-      "type": "embedding",
-      "overrideName": "text-embedding-3-small",
-      "endpoint": "http://adapter-dial-openai:5000/openai/deployments/text-embedding-3-small/embeddings",
-      "upstreams": [
-        {
-          "endpoint": "https://${AZURE_OPENAI_SERVICE_NAME}.azure.com/openai/v1/embeddings",
-          "key": "${API_KEY}"
-        }
-      ]
-    },
-    "text-embedding-3-large": {
-      "type": "embedding",
-      "overrideName": "text-embedding-3-large",
-      "endpoint": "http://adapter-dial-openai:5000/openai/deployments/text-embedding-3-large/embeddings",
-      "upstreams": [
-        {
-          "endpoint": "https://api.openai.com/v1/embeddings",
-          "key": "${OPENAI_API_KEY}"
-        }
-      ]
-    },
-    "tts": {
-      "type": "chat",
-      "endpoint": "http://adapter-dial-openai:5000/openai/deployments/tts/chat/completions",
-      "upstreams": [
-        {
-          "endpoint": "https://${AZURE_OPENAI_SERVICE_NAME}.azure.com/openai/deployments/tts/audio/speech",
-          "key": "${API_KEY}"
-        }
-      ]
-    },
-    "whisper": {
-      "type": "chat",
-      "endpoint": "http://adapter-dial-openai:5000/openai/deployments/whisper/chat/completions",
-      "upstreams": [
-        {
-          "endpoint": "https://${AZURE_OPENAI_SERVICE_NAME}.azure.com/openai/deployments/whisper/audio/transcriptions",
-          "key": "${API_KEY}"
-        }
-      ],
-      "inputAttachmentTypes": [
-        "audio/mpeg"
-      ]
-    },
-    "gpt-4o-transcribe": {
-      "type": "chat",
-      "endpoint": "http://adapter-dial-openai:5000/openai/deployments/gpt-4o-transcribe/chat/completions",
-      "upstreams": [
-        {
-          "endpoint": "https://api.openai.com/v1/audio/transcriptions",
-          "key": "${OPENAI_API_KEY}"
-        }
-      ],
-      "inputAttachmentTypes": [
-        "audio/mpeg"
-      ]
-    },
-    "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
-      "displayName": "Sonnet 3.7 Bedrock",
-      "endpoint": "http://adapter-dial-bedrock:5000/openai/deployments/us.anthropic.claude-3-7-sonnet-20250219-v1:0/chat/completions",
-      "type": "chat",
-      "upstreams": [
-        {
-          "extraData": {
-            "region": "us-east-1",
-            "aws_access_key_id": "${AWS_ACCESS_KEY_ID_STARTS_WITH_AKIA}",
-            "aws_secret_access_key": "${AWS_SECRET_ACCESS_KEY}"
-          }
-        }
-      ]
-    }
+
   },
   "keys": {
     "dial_api_key": {
@@ -150,9 +15,7 @@
   "roles": {
     "default": {
       "limits": {
-        "gpt-4o": {
-          "minute": "100"
-        }
+
       }
     }
   }
