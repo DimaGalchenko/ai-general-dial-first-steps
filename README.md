@@ -8,11 +8,12 @@
 - **[docker-compose.yml](docker-compose.yml)** - Service orchestration and networking
 
 ## Learning Path
-1. **T1** - Basic DIAL Chat setup
-2. **T2** - **OPTIONAL**, First Echo application in container
-3. **T3** - Local development workflow
-4. **T4** - Models and adapter integration
-5. **T5** - Application with streaming
+1. **[T1](tasks/t1)** - Basic DIAL Chat setup
+2. **[T2](tasks/t2)** - **OPTIONAL**, First Echo application in container
+3. **[T3](tasks/t3)** - Local development workflow
+4. **[T4](tasks/t4)** - Models and adapter integration
+5. **[T5](tasks/t5)** - Application with streaming
+6. **[T5Optional](tasks/t_optional)** - Additional configurations of different models
 
 ## Environment Requirements
 - Docker and Docker Compose
