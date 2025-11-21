@@ -60,3 +60,7 @@ Add Claude Sonnet 3.7 from [AWS Bedrock](https://aws.amazon.com/bedrock/). You n
 3. Replace `${AWS_ACCESS_KEY_ID_STARTS_WITH_AKIA}` and `${AWS_SECRET_ACCESS_KEY}` with AWS Keys
 4. Restart DIAL Core service
 5. Test it
+
+---
+
+## AFTER ALL THE TASKS DON"T FORGET TO REMOVE API KEYs FROM core/config.json

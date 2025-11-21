@@ -206,3 +206,7 @@ In this section we will use [OpenAI Responses API](https://learn.microsoft.com/e
         "dimensions": 10
     }'
     ```
+   
+---
+
+## AFTER ALL THE TASKS DON"T FORGET TO REMOVE API KEYs FROM core/config.json

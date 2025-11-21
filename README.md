@@ -15,6 +15,8 @@
 5. **[T5](tasks/t5)** - Application with streaming
 6. **[T5Optional](tasks/t_optional)** - Additional configurations of different models
 
+## AFTER ALL THE TASKS DON"T FORGET TO REMOVE API KEYs FROM core/config.json
+
 ## Environment Requirements
 - Docker and Docker Compose
 - Python 3.11+ for local development

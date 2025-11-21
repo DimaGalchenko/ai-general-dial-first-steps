@@ -34,3 +34,7 @@ Documentation for [adapter-dial-vertexai](https://github.com/epam/ai-dial-adapte
     ```
 5. Restart DIAL Core service
 6. Test it in DIAL Chat
+
+---
+
+## AFTER ALL THE TASKS DON"T FORGET TO REMOVE API KEYs FROM core/config.json
