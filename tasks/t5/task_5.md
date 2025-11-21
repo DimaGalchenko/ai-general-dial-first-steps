@@ -37,5 +37,6 @@
 
 ---
 
-## AFTER ALL THE TASKS DON'T FORGET TO REMOVE API KEYs FROM core/config.json
+## AFTER ALL THE TASKS DONE - DON'T FORGET TO REMOVE API KEYs FROM core/config.json
+
 ## That's all 🎉
