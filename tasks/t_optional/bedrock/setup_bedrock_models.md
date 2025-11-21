@@ -63,4 +63,4 @@ Add Claude Sonnet 3.7 from [AWS Bedrock](https://aws.amazon.com/bedrock/). You n
 
 ---
 
-## AFTER ALL THE TASKS DON"T FORGET TO REMOVE API KEYs FROM core/config.json
+## AFTER ALL THE TASKS DON'T FORGET TO REMOVE API KEYs FROM core/config.json
