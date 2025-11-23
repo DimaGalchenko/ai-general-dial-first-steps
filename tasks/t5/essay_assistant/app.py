@@ -34,8 +34,12 @@ class EssayAssistantApplication(ChatCompletion):
         #       docker-compose.yml for chat service)
         #   - `api_version="2025-01-01-preview"`
 
-        client: AsyncDial = None
 
+        client: AsyncDial = AsyncDial(
+            base_url="http://localhost:8080",
+            api_key="dial_api_key",
+            api_version="2025-01-01-preview"
+        )
         #TODO:
         # 1. Create self-closable choice where we return response (you can find this code in echo app)
         #    (you need to call `response.create_single_choice()`
@@ -48,14 +52,31 @@ class EssayAssistantApplication(ChatCompletion):
         #   -> Get its `delta` (chunk.choices[0].delta) and assign to `delta`
         #   -> if delta is not None and has `content` (delta.content):
         #   -> Append delta content to choice (choice.append_content(delta.content))
+        with response.create_single_choice() as choice:
+            chunks = await client.chat.completions.create(
+                deployment_name="gpt-4o",
+                stream=True,
+                messages=[
+                    {
+                        "role": "system",
+                        "content": SYSTEM_PROMPT,
+                    },
+                    {
+                        "role": "user",
+                        "content": request.messages[-1].content
+                    }
+                ],
+            )
+
+            async for chunk in chunks:
+                if chunk.choices and len(chunk.choices) > 0:
+                    delta = chunk.choices[0].delta
+                    if delta and delta.content:
+                        choice.append_content(delta.content)
 
 
 app: DIALApp = DIALApp()
-#TODO:
-# - add chat completion to `app`:
-#       - use method `add_chat_completion`
-#       - deployment_name is `essay-assistant`
-#       - impl is `EssayAssistantApplication()`
+app.add_chat_completion(deployment_name="essay-assistant", impl=EssayAssistantApplication())
 
 if __name__ == "__main__":
     uvicorn.run(app, port=5025, host="0.0.0.0")
